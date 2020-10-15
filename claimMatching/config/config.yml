@@ -1,0 +1,80 @@
+---
+# paths:
+google_dir: data_samples/fact_check_api/ # Google FactCheck API data dir
+json_dir: data_samples/misc_json/ # misc json data dir
+ng_dir: data_samples/newsguard/ # newsguard json data dir
+output_dir: claimMatching/matched_claims/ # path to where matched outputs are written
+secret_loc: claimMatching/env/secret.json # google api secret key location
+tweet_dir: data_samples/tweets/ # tweet data dir
+
+# fact check api data fetcher parameters:
+keywords: # keywords to search for in Google FactCheck API (case-insensitive)
+  - coronavirus
+  - covid-19
+  - sars-cov-2
+  - covid
+  - wuhan virus
+languages: # languages to find in the FactCheck API
+  - en
+#  - es
+
+# db tweet fetcher parameters:
+num_tweets: 15000 # maximum number of tweets to pull from the db for encoding and searching, 0 for no limit
+
+# local tweet fetcher parameters:
+num_entries: 10000 # maximum number of tweets to use from each data file, 0 for no limit (this is simply to make the runtime faster)
+tweet_files: # regex for the files
+  - .*2020-05-01-..\.json
+# below are some sample regular expressions that may be helpful
+#  - .*20..-..-..-..\.json # include all tweets in the 2000s
+#  - .*2020-01-31-..\.json # example for all January 31 2020 tweets
+#  - .*2020-01-..-..\.json # example for all January 2020 tweets
+#  - .*2020-..-0[12]-..\.json # example for all tweets for the first and second day of each month in 2020
+
+# claim matcher parameters:
+num_matches: 5 # number of top matches to show
+# name of pre-trained model params, examples at https://github.com/UKPLab/sentence-transformers#pretrained-models
+model: distiluse-base-multilingual-cased
+# additional recommended models are xlm-r-large-en-ko-nli-ststb and roberta-large-nli-stsb-mean-tokens
+
+# filtering parameters:
+num_filters: 80 # how many words to use for filtering the match set, 0 for none
+stopwords: # additional stopwords to remove for filtering the match set
+  - says
+  - said
+  - shows
+  - image
+  - first
+  - man
+  - found
+  - due
+  - photo
+  - new
+  - video
+  - could
+  - used
+  - get
+  - every
+  - hours
+  - may
+  - help
+  - amid
+  - show
+  - https://www.abc.net.au/news/2020-06-10/fact-check-victoria-nsw-covid-19-testing-rates/12312034
+
+# manual matcher parameters:
+sentences: # manually specified sentences to use for claim matching if manual is specified for the search set
+  - Nanavati Hospital does not recommend lemon, turmeric for COVID "treatment"
+  - Nanavati Hospital recommends lemon, turmeric for COVID "treatment"
+  - Nanavati Hospital does not recommend lemon, turmeric for COVID treatment
+  - Nanavati Hospital recommends lemon, turmeric for COVID treatment
+  - Nanavati Hospital recommends lemon for COVID "treatment"
+  - Nanavati Hospital recommends lemon for COVID treatment
+  - Doctors recommend lemon, turmeric for COVID "treatment"
+  - Lemons can save you from covid
+  - Lemons give you covid
+  - Lemons kill you
+
+# multimodal data parameters:
+remove_text_only: false # whether or not to remove text-only tweets (tweets with no image)
+...
