@@ -1,13 +1,32 @@
-# ClaimMatching
+# Infodemic Claim-Matching
+
+## Intro
+
 This codebase matches COVID-19-related content from Google's Fact Check API to json files (e.g. Tweets) 
 
 We have provided a claim matcher than can support matching claims from one set of data to another using semantic analysis.
-More specifically, we use an SBERT to encode each claim from one set, which we call the search set. 
+More specifically, we use a SBERT to encode each claim from one set, which we call the search set. 
 Then, we iterate over every encoding in another set, the candidate set, and pick the closest matches from each. 
 For instructions on how to use the claim matcher, follow the instructions below, keeping in mind that the functionality 
 is located in the `claimMatching` subdirectory.
 
 
+## Claim Matching vs Semantic Similarity
+
+
+<p float="left">
+  <img src="docs/assets/SBERT-input-output.png" width="600" />
+</p>
+
+
+
+<p float="left">
+  <img src="docs/assets/Preprocessing_pipeline.png" width="600" />
+</p>
+
+
+
+### Examples
 
 <p float="left">
   <img src="docs/assets/Tweet-match.png" width="600" />
@@ -19,9 +38,8 @@ is located in the `claimMatching` subdirectory.
 </p>
 
 
-# Infodemic Claim-Matching
 
-### Claim-Matching Setup
+## Claim-Matching Setup
 1. Navigate to the root directory in Terminal.
 2. Create a new virtual environment.
    2. On MacOS/Linux, run `python3 -m venv claimEnv` in Terminal.
