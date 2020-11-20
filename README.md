@@ -9,18 +9,13 @@ is located in the `claimMatching` subdirectory.
 
 
 
-![Tweet Match](docs/assets/Tweet-match.jpg)
-
-
-![Claim Match](docs/assets/Claim-match.jpg)
-
 <p float="left">
-  <img src="docs/assets/Tweet-match.png" width="300" />
+  <img src="docs/assets/Tweet-match.png" width="600" />
 </p>
 
 
 <p float="left">
-  <img src="docs/assets/Claim-match.png" width="300" />
+  <img src="docs/assets/Claim-match.png" width="600" />
 </p>
 
 
