@@ -11,14 +11,14 @@ For instructions on how to use the claim matcher, follow the instructions below,
 is located in the `claimMatching` subdirectory.
 
 
-## Claim Matching vs Semantic Similarity
-
+## Claim Matching via Semantic Similarity
+This repository leverages a pre-trained SBERT model (see Reimers & Gurevych 2019 for details) to rapidly compare two document sets at a sentence level. In the below example, we are searching a database of previously fact checked claims (the candidate set) with the tweets in our database. 
 
 <p float="left">
   <img src="docs/assets/SBERT-input-output.png" width="600" />
 </p>
 
-
+We pre-processed the search set (COVID-related Tweets, in this case), by filtering to English and to the top fact-checked claim terms via TF-IDF. We added this TF-IDF filtering step because converting tweets to embeddings is the longest step of the pipeline. This largely reduced the less relevant tweets we searched for matches to (e.g. Tweets of "This." or "That's the Tweet".) 
 
 <p float="left">
   <img src="docs/assets/Preprocessing_pipeline.png" width="600" />
@@ -27,16 +27,15 @@ is located in the `claimMatching` subdirectory.
 
 
 ### Examples
-
+Here's an example of a tweet and the closest matches in the fact-checked claim database: 
 <p float="left">
   <img src="docs/assets/Tweet-match.png" width="600" />
 </p>
 
-
+Here's an example of a claim and the closest tweets: 
 <p float="left">
   <img src="docs/assets/Claim-match.png" width="600" />
 </p>
-
 
 
 ## Claim-Matching Setup
