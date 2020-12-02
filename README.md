@@ -62,21 +62,6 @@ the search set and set "B" would be made the candidate set. Both sets support tw
 Google FactCheck API, and user supplied JSON from any source. The search set may contain manually
 specified sentences. Below are instructions for how to set up each source for use.
 
-### Internal PostgreSQL Tweet Data Setup
-1. In a web browser, open [Mona's Infodemic PostgreSQL repository](https://gitlab.iqt.org/MGogia/covid-infodemic).
-2. Duplicate the secret-template.json file in the claimMatching/env directory of the repository and name the duplicate
-secret.json, if secret.json wasn't created for FactCheck API data setup below.
-3. Inside secret.json, insert the new API key between the empty quotes. For example, if the API key is `MY PASSWORD`, the
-secret.json should have the contents `{"key":"", "tweet_db_pwd":"MY PASSWORD"}`.
-4. Ensure that you are connected to the VPN before running the claim matcher.
-
-### Internal Local Tweet Data Setup
-Note: This is temporary and is liable to change once tweets are in the PostgreSQL database.
-1. Fetch the desired `.jsonl.gz` tweet data files from Mona's server and move them to `data_samples/tweets/`.
-2. Unzip the files.
-3. Change the filename of the unzipped files from `.jsonl` to `.json`.
-
-
 ### External Local Tweet Data Setup
 1. Hydrate the Twitter data located at the [COVID-19 Twitter data respository](https://github.com/echen102/COVID-19-TweetIDs)
 as jsonl files.
