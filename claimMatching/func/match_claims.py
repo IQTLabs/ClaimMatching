@@ -110,6 +110,10 @@ def retrieve_nearest(search_docs, candidate_docs, matches, search_set, candidate
         matches = [None] * len(search_embeddings)
 
     print("Writing output...")
+    if not os.path.exists((cfg['output_dir'])):
+        cwd = os.getcwd()    
+        os.mkdir(os.path.join(cwd,cfg['output_dir']))
+
     with open(os.path.join(cfg['output_dir'], search_set + '-' + candidate_set + '-' +
                                               datetime.now().strftime("%m%d%y-%H%M%S") + '.txt'), "w") as f:
         f.write("Model: " + cfg['model'] + "\n")
