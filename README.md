@@ -15,7 +15,7 @@ is located in the `claimMatching` subdirectory.
 This repository leverages a pre-trained SBERT model (see Reimers & Gurevych 2019 for details) to rapidly compare two document sets at a sentence level. In the below example, we are searching a database of previously fact checked claims (the candidate set) with the tweets in our database. 
 
 <p float="left">
-  <img src="docs/assets/SBERT-input-output.png" width="600" />
+  <img src="docs/assets/ClaimMatching_system.png" width="600" />
 </p>
 
 We pre-processed the search set (COVID-related Tweets, in this case), by filtering to English and to the top fact-checked claim terms via TF-IDF. We added this TF-IDF filtering step because converting tweets to embeddings is the longest step of the pipeline. This largely reduced the less relevant tweets we searched for matches to (e.g. Tweets of "This." or "That's the Tweet".) 
