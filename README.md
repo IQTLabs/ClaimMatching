@@ -62,12 +62,6 @@ the search set and set "B" would be made the candidate set. Both sets support tw
 Google FactCheck API, and user supplied JSON from any source. The search set may contain manually
 specified sentences. Below are instructions for how to set up each source for use.
 
-### External Local Tweet Data Setup
-1. Hydrate the Twitter data located at the [COVID-19 Twitter data respository](https://github.com/echen102/COVID-19-TweetIDs)
-as jsonl files.
-2. Move the desired hydrated jsonl files to `data_samples/tweets/`.
-
-
 ### Fact Check API Setup
 In order to obtain the data for the Google Fact Check API, one must first set up a personal key via the following steps:
 1. Follow the instructions located at https://support.google.com/googleapi/answer/6158862 to create an API key for your
@@ -80,6 +74,16 @@ secret.json should have the contents `{"key":"MY KEY", "tweet_db_pwd":""}`.
 message that includes a link. Click on the link and follow the on-screen instructions to give Fact Check API permission
 to use your API key.
 5. Run `main.py` again following the directions above to successfully fetch the data.
+
+### Postgres Tweet Data Setup
+1. Inside secret.json, insert your Postgres API key between the empty quotes. For example, if the API key is MY PASSWORD, the secret.json should have the contents {"key":"", "tweet_db_pwd":"MY PASSWORD"}.
+2. When you run the Claim Matcher, follow the flags for PostgreSQL for search/candidate data. 
+
+### Local Tweet Data Setup
+1. Hydrate the Twitter data located at the [COVID-19 Twitter data respository](https://github.com/echen102/COVID-19-TweetIDs)
+as jsonl files.
+2. Move the desired hydrated jsonl files to `data_samples/tweets/`.
+3. When you run the Claim Matcher, follow the flags for local tweets for search/candidate data. 
 
 ### Manual Search Set Setup
 1. Open `config.yml` with a text editor in the repository root.
