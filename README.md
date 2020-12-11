@@ -26,13 +26,13 @@ We pre-processed the search set (COVID-related Tweets, in this case), by filteri
 
 
 
-### Examples
-Below is an example of a tweet and the closest matches in the fact-checked claim database. The top match would be a relevant fact-checked article to link for that tweet, and of course, the rest of the metadata from that fact checked claim is accessible if you'd like to build that functionality into the system (the claim's veracity, the URL to the in depth explanation of why this claim is false). 
+### Input-Output Examples
+Below is an example of a tweet (input) and the closest matches in the fact-checked claim database (output). The top match would be a relevant fact-checked article to link for that tweet, and of course, the rest of the metadata from that fact checked claim is accessible if you'd like to build that functionality into the system (the claim's veracity, the URL to the in depth explanation of why this claim is false). 
 <p float="left">
   <img src="docs/assets/Tweet-match.png" width="600" />
 </p>
 
-Below is an example of a claim and the closest tweets. This suggests that our database doesn't contain matches to this specific claim of illegal sensors, and instead contains a lot of content on legitimate COVID-19 exposure tracking efforts: 
+Below is an example of a claim (input) and the closest matching tweets (output). This suggests that our database doesn't contain matches to this specific claim of illegal sensors, and instead contains a lot of content on legitimate COVID-19 exposure tracking efforts: 
 <p float="left">
   <img src="docs/assets/Claim-match.png" width="600" />
 </p>
