@@ -1,11 +1,12 @@
 ---
 # paths:
-google_dir: data_samples/fact_check_api/ # Google FactCheck API data dir
-json_dir: data_samples/misc_json/ # misc json data dir
-ng_dir: data_samples/newsguard/ # newsguard json data dir
+data_dir: data
+google_dir: data/fact_check_api/ # Google FactCheck API data dir
+json_dir: data/misc_json/ # misc json data dir
+ng_dir: data/newsguard/ # newsguard json data dir
 output_dir: claimMatching/matched_claims/ # path to where matched outputs are written
 secret_loc: claimMatching/env/secret.json # google api secret key location
-tweet_dir: data_samples/tweets/ # tweet data dir
+tweet_dir: data/tweets/ # tweet data dir
 
 # fact check api data fetcher parameters:
 keywords: # keywords to search for in Google FactCheck API (case-insensitive)

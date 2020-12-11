@@ -77,6 +77,13 @@ def write_fact_check_data(cfg):
 
     :return: none
     """
+    if not os.path.exists((cfg['google_dir'])):
+        cwd = os.getcwd()
+        print(cwd)
+        if not os.path.exists(cfg['data_dir']):
+            os.mkdir(os.path.join(cwd,cfg['data_dir']))
+        os.mkdir((os.path.join(cwd,cfg['google_dir'])))
+
     for language in cfg['languages']:
         if not os.path.exists(os.path.join(cfg['google_dir'], language)):
             os.mkdir(os.path.join(cfg['google_dir'], language))
