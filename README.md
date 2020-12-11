@@ -76,7 +76,7 @@ account.
 secret.json, if secret.json wasn't created for Twitter data setup above.
 3. Inside secret.json, insert the new API key between the empty quotes. For example, if the API key is `MY KEY`, the
 secret.json should have the contents `{"key":"MY KEY", "tweet_db_pwd":""}`.
-4. Run `python claimMatching/main.py -d` from your repository root. The first attempt to fetch data will fail with a
+4. Run `python claimMatching/main.py -g` from your repository root. The first attempt to fetch data will fail with a
 message that includes a link. Click on the link and follow the on-screen instructions to give Fact Check API permission
 to use your API key.
 5. Run `main.py` again following the directions above to successfully fetch the data.
